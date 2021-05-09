@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rekapitulace registrace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>Rekapitulace registrace na letní dětský tábor</h2>
+    <div class="col-md-12">
+        <label for="jmeno" class="form-label">Jméno:</label>
+        <span type="text" class="form-control" id="jmeno" th:text="${formular.jmeno}"></span>
+    </div>
+
+    <div class="col-md-12">
+        <label for="prijmeni" class="form-label">Příjmení:</label>
+        <span type="text" class="form-control" id="prijmeni" th:text="${formular.prijmeni}"></span>
+    </div>
+
+    <div class="col-md-12">
+        <label for="datumNarozeni" class="form-label">Datum narození:</label>
+        <span type="date" class="form-control" id="datumNarozeni" th:text="${formular.datumNarozeni}"></span>
+    </div>
+
+
+    <div class="col-md-12">Pohlaví:
+        <div class="col-md-6 ">
+            <span type="text" th:text="${formular.pohlavi}"></span>
+        </div>
+    </div>
+
+    <div class="col-md-12">Zvolte alespoň 2 sporty:</div>
+    <div class="col-md-6 ">
+        <span type="text" th:text="${formular.sporty}"></span>
+    </div>
+
+
+    <div class="col-md-12">
+        <label for="turnus">Turnus:</label>
+        <span type="text" id="turnus" th:text="${formular.turnus}"></span>
+    </div>
+
+
+    <div class="col-md-12">
+        <label for="email" class="form-label">E-mail na rodiče:</label>
+        <span type="email" class="form-control" id="email" th:text="${formular.email}"></span>
+    </div>
+
+    <div class="col-md-12">
+        <label for="telefon" class="form-label">Telefon na rodiče:</label>
+        <span type="tel" class="form-control" id="telefon" th:text="${formular.telefon}"></span>
+    </div>
+</div>
+</body>
+</html>
