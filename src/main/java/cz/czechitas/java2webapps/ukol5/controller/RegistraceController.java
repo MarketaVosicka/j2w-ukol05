@@ -35,20 +35,18 @@ public class RegistraceController {
             return "/formular";
         }
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate narozeni = LocalDate.parse(form.getDatumNarozeni(), formatter);
-        Period period = narozeni.until(LocalDate.now());
+        Period period = form.getDatumNarozeni().until(LocalDate.now());
         int vek = period.getYears();
 
-        if (vek <= 9 || vek >= 15 || form.getSporty().size() < 2) {
-            if (vek <= 9 || vek >= 15) {
+        if (vek < 9 || vek > 15) {
                 bindingResult.rejectValue("datumNarozeni", "", "Pro účast je nutné, aby dítě bylo mezi 9 a 15 lety (včetně)");
                 return "/formular";
-            } else if (form.getSporty().size() < 2) {
+            }
+
+        if (form.getSporty().size() < 2) {
                 bindingResult.rejectValue("sporty", "", "Je nutné zadat alespoň 2 sporty");
                 return "/formular";
             }
-        }
 
         return new ModelAndView("/rekapitulace")
                 .addObject("jmeno", form.getJmeno())

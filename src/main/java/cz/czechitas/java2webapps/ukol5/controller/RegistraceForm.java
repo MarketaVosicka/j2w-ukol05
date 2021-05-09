@@ -6,8 +6,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.util.EnumSet;
 
 public class RegistraceForm {
@@ -17,7 +15,7 @@ public class RegistraceForm {
     private String prijmeni;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull
-    private String datumNarozeni;
+    private LocalDate datumNarozeni;
     @NotNull
     private Pohlavi pohlavi;
     @NotNull
@@ -44,11 +42,11 @@ public class RegistraceForm {
         this.prijmeni = prijmeni;
     }
 
-    public String getDatumNarozeni() {
+    public LocalDate getDatumNarozeni() {
         return datumNarozeni;
     }
 
-    public void setDatumNarozeni(String datumNarozeni) {
+    public void setDatumNarozeni(LocalDate datumNarozeni) {
         this.datumNarozeni = datumNarozeni;
     }
 

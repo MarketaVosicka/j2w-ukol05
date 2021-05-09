@@ -15,20 +15,20 @@
         <div class="col-md-12">
             <label for="jmeno" class="form-label">Jméno:</label>
             <input type="text" class="form-control" id="jmeno" th:field="${formular.jmeno}" required/>
-            <div class="error" th:if="${#fields.hasErrors('formular.jmeno')}" th:errors="${formular.jmeno}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.jmeno')}" th:errors="${formular.jmeno}"></div>
         </div>
 
         <div class="col-md-12">
             <label for="prijmeni" class="form-label">Příjmení:</label>
             <input type="text" class="form-control" id="prijmeni" th:field="${formular.prijmeni}" required/>
-            <div class="error" th:if="${#fields.hasErrors('formular.prijmeni')}" th:errors="${formular.prijmeni}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.prijmeni')}" th:errors="${formular.prijmeni}"></div>
         </div>
 
 
         <div class="col-md-12">
             <label for="datumNarozeni" class="form-label">Datum narození:</label>
             <input type="date" class="form-control" id="datumNarozeni" th:field="${formular.datumNarozeni}" required/>
-            <div class="error" th:if="${#fields.hasErrors('formular.datumNarozeni')}"
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.datumNarozeni')}"
                  th:errors="${formular.datumNarozeni}"></div>
         </div>
 
@@ -44,7 +44,7 @@
                     <label for="pohlaviDivka">Dívka</label>
                 </div>
             </div>
-            <div class="error" th:if="${#fields.hasErrors('formular.pohlavi')}" th:errors="${formular.pohlavi}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.pohlavi')}" th:errors="${formular.pohlavi}"></div>
         </div>
 
 
@@ -78,7 +78,7 @@
                 <input type="checkbox" th:field="${formular.sporty}" value="VOLEJBAL"/>
                 <label th:for="${#ids.prev('sporty')}">Volejbal</label>
             </div>
-            <div class="error" th:if="${#fields.hasErrors('formular.sporty')}"
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.sporty')}"
                  th:errors="${formular.sporty}">
             </div>
         </div>
@@ -92,14 +92,13 @@
                 <option value="2">12. - 18. července 2021</option>
                 <option value="3">19. - 25. července 2021</option>
             </select>
-            <div class="error" th:if="${#fields.hasErrors('formular.turnus')}" th:errors="${formular.turnus}"></div>
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('formular.turnus')}" th:errors="${formular.turnus}"></div>
         </div>
 
 
         <div class="col-md-12">
             <label for="email" class="form-label">E-mail na rodiče:</label>
             <input type="email" class="form-control" id="email" th:field="${formular.email}"/>
-            <div class="error" th:if="${#fields.hasErrors('formular.email')}" th:errors="${formular.email}"></div>
         </div>
 
         <div class="col-md-12">
